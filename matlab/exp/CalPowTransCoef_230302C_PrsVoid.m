@@ -11,6 +11,6 @@ shading interp
 xlabel('x (mm)');
 ylabel('z (mm)');
 colorbar
-clim([0, 3.8e-3]);
+% clim([0, 3.8e-3]);
 
 print(sprintf('exp/fig/%s.jpg', fn),'-djpeg', sprintf('-r%s',num2str(300)));
