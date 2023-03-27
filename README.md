@@ -14,6 +14,7 @@ Run `UnderwaterMeta2302.m` at first to include the paths.
 
 ## Important figures
 
+### Measurements
 Power transmission coefficients with and without the AMM. See `matlab/exp/CalPowTransCoef_230302C_Res.m`.
 
 ![Power transmission coefficient](matlab/exp/fig/CalPowTransCoef_230302C_Res.jpg)
@@ -50,3 +51,7 @@ Bottom layer of the PCB.
 3D rendering of the PCB.
 
 ![](fig/PCB_3D_20230327155336.png)
+
+Photo of the PCB
+
+![](photo/PCB_20230327170556.jpg)
