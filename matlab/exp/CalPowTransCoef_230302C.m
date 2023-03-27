@@ -30,12 +30,16 @@ f_des = 445e3;
 %% sound pressure distribution without AMM
 fig_prs_void = Figure;
 pcolor(data_void.fp_abs.x.', data_void.fp_abs.z(:), squeeze(data_void.prs_rec_cal(:,1,:,idx_f)).');
+pcolor(x_data, y_data, c_data)
 fig_prs_void.Init;
 title(sprintf('Without AMM, prsesure, %d kHz', f_des/1e3));
 xlabel('x (mm)');
 ylabel('z (mm)');
 clim([0, 3.8e-3]);
 % fig_prs_void.Print('exp/fig/CalPowTransCoef_230302C_PrsVoid_')
+% extract data
+[x_data, y_data, ~, c_data] = fig_prs_void.ExtractData();
+save('exp/data/CalPowTransCoef_230302C_PrsVoid_.mat', 'x_data', 'y_data', 'c_data');
 
 %% sound pressure distribution With AMM
 fig_prs_AMM = Figure;
@@ -91,8 +95,7 @@ fig_pow_plate.Init;
 % fig_pow_AMM.Print('exp/fig/CalPowTransCoef_230302C_PowAMM_')
 
 %% transmission
-% fig_pow_coef = Figure;
-fig = figure;
+fig_pow_coef = Figure;
 plot(data_AMM.f/1e3, squeeze(pow_coef_p2_plate));
 hold on
 plot(data_AMM.f/1e3, squeeze(pow_coef_p2_AMM));
@@ -102,11 +105,12 @@ xlabel('Freq (kHz)')
 ylabel('Power transmission coefficient')
 xlim([420,460])
 ylim([0,1])
+fig_pow_coef.Init;
+fig_pow_coef.Print('exp/fig/CalPowTransCoef_230302C_Res_')
+
 
 %% save data
 f = data_AMM.f/1e3;
 pow_coef_plate = squeeze(pow_coef_p2_plate);
 pow_coef_AMM = squeeze(pow_coef_p2_AMM);
 save('exp/data/CalPowTransCoef_230302C_Res_.mat', 'f', 'pow_coef_plate', 'pow_coef_AMM');
-% fig_pow_coef.Init;
-% fig_pow_coef_AMM.Print('exp/fig/CalPowTransCoef_230302C_PowCoefAMM_')
