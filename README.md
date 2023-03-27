@@ -56,7 +56,6 @@ Photo of the PCB
 
 ![](photo/PCB_20230327170556.jpg)
 
-<object data="fig/FullBridgeRectifier/FullBridgeRectifier.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="fig/FullBridgeRectifier/FullBridgeRectifier.pdf">
-    </embed>
-</object>
+Circuit for the charging.
+Raw file is `fig/FullBridgeRectifier/FullBridgeRectifier.pdf`.
+![](fig/FullBridgeRectifier/FullBridgeRectifier.jpg)
