@@ -1,6 +1,6 @@
-% clear all
+clear all
 
-load('CalPowTransCoef_230302C_PrsAMM.mat');
+load('CalPowTransCoef_230302C_PrsVoid.mat');
 load('vik.mat')
 fn = mfilename;
 
@@ -8,6 +8,7 @@ fig = figure;
 pcolor(x_data, y_data, c_data);
 colormap(vik)
 shading interp
+% title(sprintf('Without AMM, prsesure, %d kHz', f_des/1e3));
 xlabel('x (mm)');
 ylabel('z (mm)');
 colorbar

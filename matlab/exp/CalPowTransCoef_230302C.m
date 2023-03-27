@@ -30,7 +30,7 @@ f_des = 445e3;
 %% sound pressure distribution without AMM
 fig_prs_void = Figure;
 pcolor(data_void.fp_abs.x.', data_void.fp_abs.z(:), squeeze(data_void.prs_rec_cal(:,1,:,idx_f)).');
-pcolor(x_data, y_data, c_data)
+% pcolor(x_data, y_data, c_data)
 fig_prs_void.Init;
 title(sprintf('Without AMM, prsesure, %d kHz', f_des/1e3));
 xlabel('x (mm)');
@@ -51,6 +51,9 @@ ylabel('z (mm)');
 % caxis([0, 3.8e-3]);
 % fig_prs_AMM.ExportTikz('filename', 'exp/fig/CalPowTransCoef_230302C_PrsAMM_.tex')
 % fig_prs_AMM.Print('exp/fig/CalPowTransCoef_230302C_PrsAMM_')
+% extract data
+[x_data, y_data, ~, c_data] = fig_prs_AMM.ExtractData();
+save('exp/data/CalPowTransCoef_230302C_PrsAMM_.mat', 'x_data', 'y_data', 'c_data');
 
 %% sound pressure distribution With plate
 fig_prs_plate = Figure;
@@ -62,7 +65,9 @@ ylabel('z (mm)');
 % caxis([0, 3.8e-3]);
 % fig_prs_AMM.ExportTikz('filename', 'exp/fig/CalPowTransCoef_230302C_PrsAMM_.tex')
 % fig_prs_AMM.Print('exp/fig/CalPowTransCoef_230302C_PrsAMM_')
-
+% extract data
+[x_data, y_data, ~, c_data] = fig_prs_plate.ExtractData();
+save('exp/data/CalPowTransCoef_230302C_PrsPlate_.mat', 'x_data', 'y_data', 'c_data');
 
 %% power without AMM
 fig_pow_void = Figure;
