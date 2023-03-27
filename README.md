@@ -55,3 +55,8 @@ Bottom layer of the PCB.
 Photo of the PCB
 
 ![](photo/PCB_20230327170556.jpg)
+
+<object data="fig/FullBridgeRectifier/FullBridgeRectifier.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="fig/FullBridgeRectifier/FullBridgeRectifier.pdf">
+    </embed>
+</object>
