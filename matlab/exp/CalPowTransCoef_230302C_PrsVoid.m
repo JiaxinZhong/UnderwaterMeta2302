@@ -1,6 +1,6 @@
 % clear all
 
-load('CalPowTransCoef_230302C_PrsAMM.mat');
+load('CalPowTransCoef_230302C_PrsVoid.mat');
 load('vik.mat')
 fn = mfilename;
 
