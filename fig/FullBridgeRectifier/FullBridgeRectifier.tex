@@ -1,0 +1,35 @@
+\documentclass[border=10pt]{standalone}
+\usepackage[siunitx, RPvoltages]{circuitikz}
+
+% \usepackage{mlmodern}
+\begin{document}
+
+\begin{circuitikz}[
+    circuitikz/straight=true,
+    american inductors, full diodes,
+    line width = .75pt,
+    % circuitikz/diodes/scale=0.5
+    ]
+    % \node [transformer](T){};
+    % \draw (T.B1) to [open, v=$u_s$] (T.B2);
+    % \draw (T.B1) to [ccsw] ++(2,0) coordinate(top bridge);
+    % bridge
+    \draw (0, 0) coordinate (top bridge) to [empty Schottky diode, fill = cyan!30, *-*] ++(2,-2) coordinate(right bridge)
+    to [empty Schottky diode, fill = cyan!30, *-*, invert] ++(-2,-2) coordinate (bottom bridge)
+    to [empty Schottky diode, fill = cyan!30, *-*, invert] ++(-2,2) coordinate (left bridge)
+    to [empty Schottky diode, fill = cyan!30, *-*] (top bridge);
+    \node [jump crossing, scale = 2](X) at (left bridge |- bottom bridge) {};
+    \draw (-4,0) to [short, o-, ] (top bridge);
+    \draw (-4,-4) to [short, o-, ] (X.west) (X.east) -- (bottom bridge);
+    \draw (left bridge) -- (X.north) (X.south) |- (12,-5);
+    \draw (right bridge) to[short] ++(1,0);
+
+    \draw (0, -2) node {\textsf{{\Large Rectifier}}};
+    \draw (4, -2) node [above] {\textsf{\Large Capacitor}};
+
+    \foreach \x in {1, 2, ..., 10} {
+        \draw (1+\x,-2) -- ++(1, 0) to [capacitor, fill = green!20] ++(0, -3);
+        \draw (2+\x,-3.5) node [above, xshift = 3mm, yshift = 1mm] {$C_{\x}$};
+    }
+\end{circuitikz}
+\end{document}
