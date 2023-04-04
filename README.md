@@ -74,3 +74,9 @@ Photo of the PCB
 Circuit for the charging.
 Raw file is `fig/FullBridgeRectifier/FullBridgeRectifier.pdf`.
 ![](fig/FullBridgeRectifier/FullBridgeRectifier.jpg)
+
+### Energy harvesting
+
+Power charging
+
+![](matlab/exp/fig/ChargingPower_230404A.jpg)
