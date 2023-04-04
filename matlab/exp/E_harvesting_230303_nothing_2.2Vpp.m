@@ -45,7 +45,7 @@ xlabel('Time ({\mus})','FontWeight','bold','FontSize',32,...
     'FontName','Times New Roman');
 
 % Create title
-title('Nothing');
+title('No Plate');
 
 % Uncomment the following line to preserve the X-limits of the axes
 xlim(axes1,[-4e-06 4e-06]);
@@ -58,5 +58,7 @@ set(axes1,'FontName','Times New Roman','FontSize',32,'FontWeight','bold',...
     'XTickLabel',{'-4','-2','0','2','4'},'YColor',[0 0 0],'YGrid','off','ZGrid',...
     'on');
 % Create legend
-% legend(axes1,'show');
+legend(axes1,'show');
+legend box off
+set(legend1,'Location','northwest');
 
