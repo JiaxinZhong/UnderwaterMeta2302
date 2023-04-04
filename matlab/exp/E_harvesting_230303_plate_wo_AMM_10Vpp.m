@@ -35,7 +35,7 @@ set(plot1(2),'DisplayName','Output',...
 line(xlim(), [0,0], 'LineWidth', 2, 'Color', 'k');
 
 % Create ylabel
-ylabel('Pressure ({\itV})','FontWeight','bold','FontSize',32,...
+ylabel('Digital signal ({\itV})','FontWeight','bold','FontSize',32,...
     'FontName','Times New Roman');
 
 % Create xlabel
@@ -43,12 +43,12 @@ xlabel('Time ({\mus})','FontWeight','bold','FontSize',32,...
     'FontName','Times New Roman');
 
 % Create title
-title('Plate w/o AMM_10Vpp');
+title('Plate w/o AMM 10Vpp');
 
 % Uncomment the following line to preserve the X-limits of the axes
 xlim(axes1,[-4e-06 4e-06]);
 % Uncomment the following line to preserve the Y-limits of the axes
-ylim(axes1,[-2.5 2.5]);
+ylim(axes1,[-10 10]);
 hold(axes1,'off');
 % Set the remaining axes properties
 set(axes1,'FontName','Times New Roman','FontSize',32,'FontWeight','bold',...
