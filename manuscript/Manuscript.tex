@@ -7,44 +7,42 @@
 \rhead{\includegraphics[width=2.5cm]{vch-logo.png}}
 
 
-\title{Please insert your title here}
+\title{Metamaterial-enabled ultrasound wireless power harvesting\\ through a metallic barrier }
 
 \maketitle
 
 
 
 % Author: Please give full first and last names for authors and include * after the name of all corresponding authors
-
-\author{Author One}
-\author{Author Two}
-\author{Author Three*}
-
-
+\author{Jun Ji}
+\author{Hyeonu Heo}
+\author{Jiaxin Zhong}
+ % \altaffiliation[Also at ]{Physics Department, XYZ University.}%Lines break automatically or can be forced with \\
+\author{Mourad Oudich}%
+\author{Yun Jing*}
 
 % Dedication
-
-\dedication{Optional dedication here. If no dedication is required, please leave blank}
-
-
-
-
-
+% \dedication{J.J., H.H., and J.Z equally contributed to this work. }
 
 % Affiliations: Please provide adacemic titles (Prof. or Dr.) for all authors where applicable, and include an institutional email address for all corresponding authors
 \begin{affiliations}
-A. N. Author, A. N. O. Author\\
-Address\\
-Email Address:
+J. Ji, Dr. H. Heo, Dr. J. Zhong, Prof. M. Oudich, Prof. Y. Jing \\
 
-A. N. O. Author\\
-Address
+Graduate Program in Acoustics, The Pennsylvania State University, University Park, PA 16802, USA
+
+Email Address: jing.yun@psu.edu
+
+Prof. M. Oudich \\
+Universite de Lorraine, CNRS, Institut Jean Lamour, F-54000 Nancy, France
+
+
 
 \end{affiliations}
 
 
 % Keywords: Please provide a minimum of three and a maximum of seven keywords, separated by commas
 
-\keywords{Keyword 1, Keyword 2, Keyword 3}
+\keywords{acoustic metamaterials, wireless power harvesting, ultrasound transmission enhancement}
 
 
 
@@ -61,17 +59,62 @@ Please insert your abstract here
 % Equations are always singular, i.e., Equation 1 and 2, and should be inserted using the {equation} environment, not as graphics
 % Please do not use footnotes in the text, additional information can be added to the Reference list.
 
+\justifying
+\section{Introduction}
 
-\section{First Section}
+Through-metal-wall ultrasonic power delivery has become an exciting field of research, as metal barriers prevent the use of electromagnetic wireless power transfer due to Faraday shielding effects\cite{yang2015through}. Conventional ultrasonic power delivery utilizes a pair of PZT ultrasound transducers coupled to a metal barrier through a coupling layer. The main limitation of PZT-based system is that they require direct coupling of piezoelectric transducers with metal walls to provide a good acoustic transmission path. Poor coupling will introduce severe impedance mismatch over the acoustic-electric channel and cause the power transfer efficiency to decrease rapidly. 
+\\Acoustic metamaterials \cite{cummer2016controlling} are artificial structures that are capable of controlling the propagation of sound in unconventional ways, and have led to interesting phenomena such as acoustic cloaking, acoustic subwavelength imaging, and acoustic unidirectional transparency. Among them, complementary acoustic metamaterials have been utilized to achieve strong transmission through a solid skull, and theoretically through a metal wall as long as one can design a metamaterial layer satisfying the required negative properties. However, the membrane-based complementary metamaterials usually are not sufficiently durable, which become issues in practical implementation. Time-reversal based techniques have also been used to dedign holographic lenses with tailored phase patterns. However, they mainly aim at reconstructing the distorted transmitted field, and the energy transmission improvement through a plastic skull may not work for through-metal-wall power delivery. More recently, an inversely optimized auxiliary meta-lens has been proposed to assist the power transmission through a 1.8mm thick metal wall at 200 kHz. However, they used an inverse design method by optimizing geometrical parameters of meta-lens in COMSOL, which may not be applicable to general applications. 
+\\In this work, we proposed a deterministic method, which is based on band structure and transmission analysis, to design an ultrasonic pillar-based metamaterial, and the vertical elongation mode of the metamaterial is utilized for through-metal-wall power delivery. 
+
+%\subsubsection{First Sub Subsection}
+%\threesubsection{First lowest-level subsection}
+
+\section{Results}
+\subsection{Pillar-based acoustic metamaterial}
 
 
-\subsection{First Subsection}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{Figure1.jpg}
+  \caption{Figure 1 caption goes here. Reproduced with permission.\textsuperscript{[Ref.]} Copyright Year, Publisher. }
+  \label{fig:boat1}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{Figure2.jpg}
+  \caption{Figure 2 caption goes here. Reproduced with permission.\textsuperscript{[Ref.]} Copyright Year, Publisher.}
+  \label{fig:boat1}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{Figure3.jpg}
+  \caption{Figure 3 caption goes here. Reproduced with permission.\textsuperscript{[Ref.]} Copyright Year, Publisher.}
+  \label{fig:boat1}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{Figure4.jpg}
+  \caption{Figure 4 caption goes here. Reproduced with permission.\textsuperscript{[Ref.]} Copyright Year, Publisher.}
+  \label{fig:boat1}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{Figure5V2.jpg}
+  \caption{Figure 5 caption goes here. Reproduced with permission.\textsuperscript{[Ref.]} Copyright Year, Publisher.}
+  \label{fig:boat1}
+\end{figure}
 
 
-\subsubsection{First Sub Subsection}
 
 
-\threesubsection{First lowest-level subsection}
+\subsection{Wireless power charging}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{Figure6.jpg}
+  \caption{Figure 6 caption goes here. Reproduced with permission.\textsuperscript{[Ref.]} Copyright Year, Publisher.}
+  \label{fig:boat1}
+\end{figure}
+
 
 
 \section{Conclusion}
@@ -79,9 +122,11 @@ Please insert your abstract here
 % Experimental section
 
 \section{Experimental Section}
-\threesubsection{First part of experimental section}\\
-\threesubsection{Second part of experimental section}\\
-
+\threesubsection{Numerical Simulations}\\
+\threesubsection{Fabrication}\\
+\threesubsection{Energy Harvesting Circuit}\\
+(See Note S3 in the Supporting Information)\\
+\threesubsection{Experimental Measurements}\\
 
 
 \medskip
@@ -93,7 +138,7 @@ Supporting Information is available from the Wiley Online Library or from the au
 % Acknowledgements
 \medskip
 \textbf{Acknowledgements} \par %delete if not applicable))
-Please insert your acknowledgements here
+J.J., H.H., and J.Z equally contributed to this work. Y.J. thanks the NSF for supports through CMMI 2119545, 1951221, and 2039463.
 
 % References
 \medskip
@@ -106,20 +151,10 @@ Please insert your acknowledgements here
 % Please also include your BibTeX data base file(s) in your submission
 % so that we can re-run BibTeX if necessary.
 %
-%\bibliographystyle{MSP}
-%\bibliography{MSP-template}
+\bibliographystyle{MSP}
+\bibliography{ref}
 
-\textbf{References}\\
 
-1	((Journal articles)) a) A. B. Author 1, C. D. Author 2, Adv. Mater. 2006, 18, 1; b) A. Author 1, B. Author 2, Adv. Funct. Mater. 2006, 16, 1.\\
-2	((Work accepted)) A. B. Author 1, C. D. Author 2, Macromol. Rapid Commun., DOI: 10.1002/marc.DOI.\\
-3	((Books)) H. R. Allcock, Introduction to Materials Chemistry, Wiley, Hoboken, NJ, USA 2008.\\
-4	((Edited books or proceedings volumes)) J. W. Grate, G. C. Frye, in Sensors Update, Vol. 2 (Eds: H. Baltes, W. Göpel, J. Hesse), Wiley-VCH, Weinheim, Germany 1996, Ch. 2.\\
-5	((Presentation at a conference, proceeding not published)) Author, presented at Abbrev. Conf. Title, Location of Conference, Date of Conference ((Month, Year)).\\
-6	((Thesis)) Author, Degree Thesis, University (location if not obvious), Month, Year.\\
-7	((Patents)) a) A. B. Author 1, C. D. Author 2 (Company), Country Patent Number, Year; b) W. Lehmann, H. Rinke (Bayer AG) Ger. 838217, 1952.\\
-8	((Website)) Author, Short description or title, URL, accessed: Month, Year.\\
-9	…((Please include all authors, and do not use “et al.”))\\
 
 
 
@@ -128,24 +163,6 @@ Please insert your acknowledgements here
 % Permission statements are required for all figures reproduced or adapted from previously published articles/sources. Please also ensure that all necessary permissions to reproduce images have been received
 % Please remove these statements for original figures
 
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{placeholder-image.png}
-  \caption{Figure 1 caption goes here. Reproduced with permission.\textsuperscript{[Ref.]} Copyright Year, Publisher. }
-  \label{fig:boat1}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{placeholder-image.png}
-  \caption{Figure 2 caption goes here. Reproduced with permission.\textsuperscript{[Ref.]} Copyright Year, Publisher.}
-  \label{fig:boat1}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{placeholder-image.png}
-  \caption{Figure 3 caption goes here. Reproduced with permission.\textsuperscript{[Ref.]} Copyright Year, Publisher.}
-  \label{fig:boat1}
-\end{figure}
 
 \begin{table}
  \caption{Table 1 caption}
@@ -160,35 +177,8 @@ Please insert your acknowledgements here
 \end{table}
 
 
-% Please provide Biographies and photos for Essays, Feature Articles, Progress Reports, Reviews, and Perspectives for those authors who should be highlighted  
-% These should be at most 100 words long
-% For other article types this section can be removed
-% Photographs should be 40mm broad and 50 mm high
-
-\begin{figure}
-  \includegraphics{bio-placeholder.jpg}
-  \caption*{Biography}
-\end{figure}
-
-\begin{figure}
-  \includegraphics{bio-placeholder.jpg}
-  \caption*{Biography}
-\end{figure}
-
-\begin{figure}
-  \includegraphics{bio-placeholder.jpg}
-  \caption*{Biography}
-\end{figure}
-
-\begin{figure}
-  \includegraphics{bio-placeholder.jpg}
-  \caption*{Biography}
-\end{figure}
-
-
 % Table of contents entry should be 50 - 60 words long
 % Image should be 55 mm broad and 50 mm high or 110 mm broad and 20 mm high
-
 
 \begin{figure}
 \textbf{Table of Contents}\\
@@ -197,6 +187,5 @@ Please insert your acknowledgements here
   \medskip
   \caption*{ToC Entry}
 \end{figure}
-
 
 \end{document}
