@@ -32,4 +32,4 @@ ylabel('Power (nW)')
 set(gca, 'xticklabel', {'Nothing; 2.2Vpp', 'Plate w/ AMM; 2.2Vpp', ...
     'Plate w/o AMM; 2.2Vpp', 'Plate w/o AMM; 10 Vpp'});
 
-print('ChargingPower_230404A.jpg','-djpeg', '-r300');
+print('exp/fig/ChargingPower_230404A.jpg','-djpeg', '-r300');

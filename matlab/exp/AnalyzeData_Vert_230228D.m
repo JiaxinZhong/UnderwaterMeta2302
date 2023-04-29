@@ -102,8 +102,36 @@ legend({'Emitting', 'Received'})
 xlabel('Time (ms)')
 xlim([0.3,0.4]);
 
+
 %% save the data for the above figure
 t = data.t*1e3;
 sig_emit = squeeze(data.sig_emit(idx_x_sel, 1, idx_z_sel, :));
 sig_rec = squeeze(data.sig_rec(idx_x_sel, 1, idx_z_sel, :));
-save('exp/data/AnalyzeData_Vert_230228D_.mat', 't', 'sig_emit', 'sig_rec')
+% save('exp/data/AnalyzeData_Vert_230228D_.mat', 't', 'sig_emit', 'sig_rec')
+
+%% show the spectrum of the above figure
+% sampling frequency
+fs = 1./(data.t(2) - data.t(1));
+sig_emit_spec = fft(sig_emit)/length(sig_emit);
+sig_emit_spec = sig_emit_spec(1:length(sig_emit)/2+1);
+sig_emit_spec(2:end-1) = 2*sig_emit_spec(2:end-1);
+
+sig_rec_spec = fft(sig_rec)/length(sig_rec);
+sig_rec_spec = sig_rec_spec(1:length(sig_rec)/2+1);
+sig_rec_spec(2:end-1) = 2*sig_rec_spec(2:end-1);
+
+y1 = smooth(smooth(smooth(smooth(abs(sig_emit_spec)))));
+y2 = smooth(smooth(smooth(smooth(abs(sig_rec_spec)))));
+f = (0:length(sig_emit)/2).' * (fs/length(sig_emit)) / 1e3;
+fig_sig_emit_spec = Figure;
+yyaxis left
+plot(f, y1)
+ylabel('Amplitude')
+yyaxis right
+plot(f, y2)
+legend({'Emitting', 'Received'})
+xlabel('Frequency (kHz)')
+ylabel('Amplitude')
+xlim([420,480])
+save('exp/data/AnalyzeData_Vert_230228D_.mat', ...
+    't', 'sig_emit', 'sig_rec', 'f', 'y1', 'y2')

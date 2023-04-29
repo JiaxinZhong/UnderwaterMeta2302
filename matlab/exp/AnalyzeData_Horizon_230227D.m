@@ -52,7 +52,7 @@ ylabel('z (mm)');
 % caxis([0, 3.8e-3]);
 % fig_rec_cal.Print(sprintf('fig/AnalyzeData_230227D_%s_CaliRecPrs_', fn_exp));
 [x_data, y_data, ~, c_data] = fig_rec_cal.ExtractData();
-save('exp/data/AnalyzeData_Horizon_230227D_.mat', 'x_data', 'y_data', 'c_data');
+% save('exp/data/AnalyzeData_Horizon_230227D_.mat', 'x_data', 'y_data', 'c_data');
 
 %% calicated sound power
 pow_y_cali = sum(abs(prs_rec_cal).^2, 1);

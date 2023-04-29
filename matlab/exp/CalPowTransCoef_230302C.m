@@ -19,7 +19,7 @@ fn_plate = sprintf('exp/data/%s.mat', fn_exp_plate);
 data_AMM = load(fn_AMM);
 data_void = load(fn_void);
 data_plate = load(fn_plate);
-
+    
 pow_coef_p2_AMM = data_AMM.pow_y_cali ./ data_void.pow_y_cali;
 pow_coef_p2_plate = data_plate.pow_y_cali ./ data_void.pow_y_cali;
 
@@ -113,9 +113,8 @@ ylim([0,1])
 fig_pow_coef.Init;
 fig_pow_coef.Print('exp/fig/CalPowTransCoef_230302C_Res_')
 
-
 %% save data
 f = data_AMM.f/1e3;
 pow_coef_plate = squeeze(pow_coef_p2_plate);
 pow_coef_AMM = squeeze(pow_coef_p2_AMM);
-save('exp/data/CalPowTransCoef_230302C_Res_.mat', 'f', 'pow_coef_plate', 'pow_coef_AMM');
+% save('exp/data/CalPowTransCoef_230302C_Res_.mat', 'f', 'pow_coef_plate', 'pow_coef_AMM');
