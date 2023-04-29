@@ -11,7 +11,7 @@ clear all
 load('E_harvesting_230303_nothing_2.2Vpp.mat');
 
 % Create figure
-figure;
+figure1 = figure;
 
 % figure size setting
 x0=50;
@@ -23,42 +23,52 @@ width=height*(4/3);
 set(gcf,'position',[x0,y0,width,height])
 
 % Create axes
-axes1 = axes;
+axes1 = axes('Parent',figure1,...
+    'YTickLabel',{'-2.5','-2','-1','0','1','2','2.5'},...
+    'YTick',[-2.5 -2 -1 0 1 2 2.5]);
 hold(axes1,'on');
+colororder([0 0.447 0.741]);
 
-% Create multiple line objects using matrix input to plot
-plot1 = plot(X1,YMatrix1);
-set(plot1(1),'DisplayName','Input',...
+% Activate the left side of the axes
+yyaxis(axes1,'left');
+% Create plot
+plot(X1,YMatrix1(:,1),'DisplayName','Input','LineWidth',3,...
     'Color',[0 0.447058826684952 0.74117648601532]);
-set(plot1(2),'DisplayName','Output',...
+
+% Create ylabel
+ylabel('Input signal (V)');
+% Uncomment the following line to preserve the Y-limits of the axes
+ylim(axes1,[-2.5 2.5]);
+
+% Set the remaining axes properties
+set(axes1,'YColor',[0 0.447 0.741],'YMinorTick','on','YTick',...
+    [-2 -1 0 1 2],'YTickLabel',{'-2','-1','0','1','2'});
+
+% Activate the right side of the axes
+yyaxis(axes1,'right');
+% Create plot
+plot(X1,YMatrix1(:,2),'DisplayName','Output','LineWidth',3,...
     'Color',[0.850980401039124 0.325490206480026 0.0980392172932625]);
+
+% Create ylabel
+ylabel('Output signal (V)');
+% Uncomment the following line to preserve the Y-limits of the axes
+ylim(axes1,[-0.4 0.4]);
 
 % Create line (y = 0)
 line(xlim(), [0,0], 'LineWidth', 2, 'Color', 'k');
 
-% Create ylabel
-ylabel('Digital signal ({\itV})','FontWeight','bold','FontSize',32,...
-    'FontName','Times New Roman');
-
+% Set the remaining axes properties
+set(axes1,'YColor',[0.85 0.325 0.098],'YMinorTick','on','YTick',...
+    [-0.4 -0.2 0 0.2 0.4],'YTickLabel',{'-0.4','-0.2','0','0.2','0.4'});
 % Create xlabel
-xlabel('Time ({\mus})','FontWeight','bold','FontSize',32,...
-    'FontName','Times New Roman');
+xlabel('Time (\mus)');
 
 % Create title
 title('No Plate');
 
-% Uncomment the following line to preserve the X-limits of the axes
-xlim(axes1,[-4e-06 4e-06]);
-% Uncomment the following line to preserve the Y-limits of the axes
-ylim(axes1,[-2.5 2.5]);
 hold(axes1,'off');
 % Set the remaining axes properties
 set(axes1,'FontName','Times New Roman','FontSize',32,'FontWeight','bold',...
     'LineWidth',4,'XGrid','off','XTick',[-4e-06 -2e-06 0 2e-06 4e-06],...
-    'XTickLabel',{'-4','-2','0','2','4'},'YColor',[0 0 0],'YGrid','off','ZGrid',...
-    'on');
-% Create legend
-legend(axes1,'show');
-legend box off
-set(legend1,'Location','northwest');
-
+    'XTickLabel',{'0','2','4','6','8'});
