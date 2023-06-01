@@ -1,16 +1,16 @@
- %% the time signals at the center point; plate
+ %% the time signals at the center point; AMM
 clear all
 
-load('AnalyzeData_Vert_230228D_Exp230307B_Plate2.mat');
+load('AnalyzeData_Vert_230228D_Exp230228F_AMM2.mat');
 fn = mfilename;
 
-fig = Figure;
+fig = figure;
 subplot(211)
 yyaxis left
-plot(t, sig_emit, 'linewidth', 2);
+plot(t, sig_emit);
 ylabel('Voltage (V)')
 yyaxis right
-plot(t, sig_rec, 'linewidth', 2);
+plot(t, sig_rec);
 leg = legend({'Emitting', 'Received'});
 xlabel('Time (ms)')
 ylabel('Voltage (V)')
@@ -29,10 +29,10 @@ leg.FontWeight = 'bold';
 
 subplot(212)
 yyaxis left
-plot(t, sig_emit, 'linewidth', 2);
+plot(t, sig_emit);
 ylabel('Voltage (V)')
 yyaxis right
-plot(t, sig_rec, 'linewidth', 2);
+plot(t, sig_rec);
 ylabel('Voltage (V)')
 leg = legend({'Emitting', 'Received'});
 xlabel('Time (ms)')
@@ -53,6 +53,7 @@ print(sprintf('exp/fig/%s.jpg', fn),'-djpeg', sprintf('-r%s',num2str(300)));
 
 
 
+
 fig2 = figure;
 yyaxis left
 plot(f, y1, 'linewidth', 2)
@@ -62,7 +63,7 @@ plot(f, y2, 'linewidth', 2)
 leg = legend({'Emitting', 'Received'});
 xlabel('Frequency (kHz)')
 ylabel('Amplitude')
-xlim([420,473])
+xlim([420,480])
 ax = gca;
 ax.FontSize = 12;
 ax.LineWidth = 2;
@@ -74,5 +75,6 @@ leg.FontName = 'Times New Roman';
 leg.FontSize = 16;
 ax.FontWeight = 'bold';
 leg.FontWeight = 'bold';
+
 
 print(sprintf('exp/fig/%s_Spectrum.jpg', fn),'-djpeg', sprintf('-r%s',num2str(300)));

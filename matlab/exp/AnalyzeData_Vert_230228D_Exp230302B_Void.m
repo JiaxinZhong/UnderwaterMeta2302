@@ -59,7 +59,7 @@ plot(f, y2, 'linewidth', 2)
 leg = legend({'Emitting', 'Received'});
 xlabel('Frequency (kHz)')
 ylabel('Amplitude')
-xlim([420,480])
+xlim([420,473])
 ax = gca;
 ax.FontSize = 12;
 ax.LineWidth = 2;
